@@ -25,7 +25,7 @@ def main():
     app.job_queue.run_daily(
         daily_job,
         time=time(hour=0, minute=0)
-    )
+    )                                                                                                                                                                                                                                                                                               
 
     print("Runing...........")
     app.run_polling()

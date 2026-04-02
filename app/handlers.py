@@ -17,7 +17,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     #if user alrady exists just say i am alive else first add him to database
     if  not user_exists(userId):
 
-        addUser(userId)
+        await addUser(userId)
 
         await update.message.reply_text("🕵️ Anonymous Confession Bot\n\nHey, I receive anonymous confessions, review them, and publish selected ones to a channel—without revealing your identity.\n\nTo send your confession, use the command: /confess\nThen type your message and send. \n\nIt can be anything\n\nany incident \nlove story \nbreakup story \nOr anything you wanna say but can't say openly\n\n—just make sure it follows basic rules (no spam, hate, or illegal content).Once submitted, your confession will be reviewed before being posted.\n\nConfessions will be posted here @CricMemez\n\nMake sure you join so you can see other's opinions on your confessions.\n\nNote : Your indentity will be anonymous, so don't share any name etc")
     else:
@@ -33,15 +33,15 @@ async def confess(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     # fethch count from databse
     user_id = update.message.from_user.id
-    row = check(user_id)
+    row = await check(user_id)
 
     currCnt = row[0]
 
     # if count >=5 daily limit exceeds
     # else ask for confession msg 
-    if currCnt >= 5:
+    if currCnt >= 15:
         print("op.")
-        await update.message.reply_text("You have exhausted daily limit of 5 :(")
+        await update.message.reply_text("You have exhausted daily limit of 15 :(")
         return
     else:
         await update.message.reply_text("send your msg....😎")
