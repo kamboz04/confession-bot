@@ -1,4 +1,4 @@
-notttelegram import Update,InlineKeyboardButton,InlineKeyboardMarkup
+from telegram import Update,InlineKeyboardButton,InlineKeyboardMarkup
 from telegram.ext import ContextTypes
 from telegram import Update,ReplyKeyboardMarkup,KeyboardButton,ReplyKeyboardRemove
 from telegram.ext import Application, CommandHandler, ContextTypes,MessageHandler,filters
