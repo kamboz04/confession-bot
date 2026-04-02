@@ -15,13 +15,13 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     userId = str(update.effective_user.id)
 
     #if user alrady exists just say i am alive else first add him to database
-    if  not user_exists(userId):
+    if not user_exists(userId):
 
-        await addUser(userId)
-
+        addUser(userId)
+        
         await update.message.reply_text("🕵️ Anonymous Confession Bot\n\nHey, I receive anonymous confessions, review them, and publish selected ones to a channel—without revealing your identity.\n\nTo send your confession, use the command: /confess\nThen type your message and send. \n\nIt can be anything\n\nany incident \nlove story \nbreakup story \nOr anything you wanna say but can't say openly\n\n—just make sure it follows basic rules (no spam, hate, or illegal content).Once submitted, your confession will be reviewed before being posted.\n\nConfessions will be posted here @CricMemez\n\nMake sure you join so you can see other's opinions on your confessions.\n\nNote : Your indentity will be anonymous, so don't share any name etc")
     else:
-        
+       
         await update.message.reply_text("🕵️ Anonymous Confession Bot\n\nHey, I receive anonymous confessions, review them, and publish selected ones to a channel—without revealing your identity.\n\nTo send your confession, use the command: /confess\nThen type your message and send. \n\nIt can be anything\n\nany incident \nlove story \nbreakup story \nOr anything you wanna say but can't say openly\n\n—just make sure it follows basic rules (no spam, hate, or illegal content).Once submitted, your confession will be reviewed before being posted.\n\nConfessions will be posted here @CricMemez\n\nMake sure you join so you can see other's opinions on your confessions.\n\nNote : Your indentity will be anonymous, so don't share any name etc")
 
 #a dictionary to store the confessions temprarly
